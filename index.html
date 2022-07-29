@@ -1,1 +1,392 @@
-Betfund is coming soon
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="Pinnacle, Betfair, Bet365 Basketball Bots - Dropping Odds" />
+    <meta property="og:site_name" content="betfund.eu" />
+
+
+    <meta name="theme-color" content="#a755e5">
+    <meta name="msapplication-navbutton-color" content="#a755e5">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#a755e5">
+
+    <title>BetFund - Pinnacle, Betfair, Bet365 Telegram Bots</title>
+
+    <link rel="preload" href="./assets/fonts/bebas_fix.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preload" href="./assets//fonts/roboto_condensed.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="./assets//fonts/nord.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="./assets//fonts/font-awesome-all.css" as="style" onload="this.rel='stylesheet'">
+
+    <meta name="description"
+        content="Live Football Inplay Stats & Alerts - Betfair Money - Dropping Odds - Suspicious Bets - Basketball - Dropping Odds Live - Odds Movement Tracker">
+    <link href="./assets//css/vendors.min.css" rel="stylesheet">
+    <link href="./assets//css/style.min.css" rel="stylesheet">
+    <script src="./assets//js/base/lazysizes.min.js" async></script>
+    <script src="./assets//js/base/jquery.min.js"></script>
+    <script src="./assets//js/vendors.min.js"></script>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        html {
+            background-color: #ffffff;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="page-content">
+        <div class="dfx-overlay"></div>
+
+        <div id="page-preloader">
+            <div class="wrap">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
+        </div>
+
+
+
+        <div id="dfx-content-wrapper">
+
+            <section id="main-banner">
+
+                <section id="nav-header" class="d-none d-md-none d-lg-block d-md-flex align-items-center">
+                    <div class="container">
+                        <div class="nav-wrapper">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="/price.html">Pricing</a></li>
+                                        <li><a href="/">Pinnacle (soon)</a></li>
+                                        <li><a href="/">Betfair (soon)</a></li>
+                                        <li class="hide-item"><a href="/partner">Basketball (soon)</a></li>
+                                        <li class="hide-item"><a href="/support">FAQ (soon)</a></li>
+                                        <li><a href="#" class="more"><i class="fal fa-plus-circle"></i>Show more</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <svg class="left-side" width="60" height="46">
+                                <path d="M 0 0 C 46 0 15 46 60 46 L 60 0 Z" />
+                            </svg>
+
+                            <svg class="right-side" width="60" height="46">
+                                <path d="M 60 0 C 15 0 46 46 0 46 L 0 0 Z" />
+                            </svg>
+
+                        </div>
+                    </div>
+                </section>
+                <div class="container">
+                    <div class="main-banner-content">
+                        <div class="flex-wrapper">
+                            <div class="left-side">
+                                <h1 class="main-title">Bet Smarter <span>Outperform the Bookmakers</span></h1>
+                                <div class="sport-list">
+                                    <div class="item">
+                                        <i class="icon fal fa-futbol"></i>
+                                        <span class="name">Football</span>
+                                    </div>
+                                    <div class="item">
+                                        <i class="icon fal fa-basketball"></i>
+                                        <span class="name">Basketball</span>
+                                    </div>
+                                    <div class="item">
+                                        <i class="icon fal fa-gamepad"></i>
+                                        <span class="name">Esports</span>
+                                    </div>
+                                </div>
+                                <p class="desc dfx-text">
+                                    We're the #1 Value Betting Group in Telegram. Our tools compares your
+                                    bookmaker′s odds in real-time with the Asian handicaps, Sharp bookmakers and
+                                    Exchanges. Those liquide markets are the best indicator for fair odds. The results
+                                    are profitable bet suggestions on overpriced odds.
+                                </p>
+                                <!-- <div class="dfx-btn-grp">
+                                    <a href="/en/price" class="dfx-btn dfx-btn-prm focus">Get access</a>
+                                    <a href="/en/forecast" class="dfx-btn dfx-btn-def-out-w">View forecasts</a>
+                                </div> -->
+                            </div>
+                            <div class="right-side">
+                                <div class="chart-wrapper">
+                                    <canvas id="main-chart" height="500" width="500"></canvas>
+                                </div>
+                                <div class="chart-legend">
+                                    <div class="item">
+                                        <i class="point"></i> <span class="name">Team 1</span>
+                                    </div>
+                                    <div class="item">
+                                        <i class="point"></i> <span class="name">Team 2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-banner-advantages">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="advantage-slider owl-carousel" data-slideout-ignore>
+                                    <div class="item">
+                                        <div class="icon-container">
+                                            <i class="fas fa-robot"></i>
+                                        </div>
+                                        <div class="content-container">
+                                            <h5 class="name">Football Bots</h5>
+                                            <p class="desc">Each game is analyzed by more than 20 parameters</p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon-container">
+                                            <i class="fas fa-hand-holding-dollar"></i>
+                                        </div>
+                                        <div class="content-container">
+                                            <h5 class="name">Best Price</h5>
+                                            <p class="desc">The best price for such services</p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon-container">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <div class="content-container">
+                                            <h5 class="name">Unique Tools</h5>
+                                            <p class="desc">Big range of football tools</p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon-container">
+                                            <i class="fas fa-chart-bar"></i>
+                                        </div>
+                                        <div class="content-container">
+                                            <h5 class="name">Open statistic</h5>
+                                            <p class="desc">Instant results, no secrets</p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon-container">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="content-container">
+                                            <h5 class="name">High possibility</h5>
+                                            <p class="desc">Possibility of forecasts over 60%</p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon-container">
+                                            <i class="fas fa-bell"></i>
+                                        </div>
+                                        <div class="content-container">
+                                            <h5 class="name">Instant Notification</h5>
+                                            <p class="desc">Telegram Alerts in all your devices</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about-ai">
+                <div class="container">
+                    <div class="row">
+                        <div class="flex-wrapper">
+                            <div class="col-lg-6 col-sm-12">
+                                <h3 class="dfx-subtitle">Turn betting into investing </h3>
+                                <h1 class="dfx-title dfx-title-cl"><b>What are Value Bets?
+                                    </b></h1>
+                                <p class="dfx-text">The value betting strategy is aimed at searching overstated
+                                    (incorrect) bookmaker odds. Namely, the bettor is to search for a bet with a clear
+                                    benefit for the bettor itself.
+
+                                    Valuebets cannot guarantee a 100% win (such an outcome is only possible with
+                                    surebets). But this strategy allows the bettor to keep out on top in a long
+                                    distance, as proven by many professional bettors.</p>
+                                <!-- <div class="dfx-btn-grp">
+                                    <a href="/en/price" class="dfx-btn dfx-btn-prm">Start earning</a> <a
+                                        href="/en/forecast" class="dfx-btn dfx-btn-out">See predictions</a>
+                                </div> -->
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="img-container">
+                                    <img data-src="./assets/img/site/index/original/tetrabet_nightmare_en.png"
+                                        src="./assets/img/site/index/original/tetrabet_nightmare_en.png"
+                                        class="dfx-img-rsp lazyload blur-up">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about-ai-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="flex-wrapper">
+                            <div class="col-md-6 d-none d-md-block d-lg-block">
+                                <div class="img-container en">
+                                    <img data-src="./assets/img/site/index/original/tetrabet_converter.png"
+                                        src="./assets/img/site/index/original/tetrabet_converter.png"
+                                        class="dfx-img-rsp lazyload blur-up">
+                                    <span class="type type-1 win animated">win</span> <span
+                                        class="type type-2 win animated">win</span> <span
+                                        class="type type-3 lose animated">lose</span> <span
+                                        class="type type-4 win animated">win</span>
+
+                                    <span class="money">+300$</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="dfx-subtitle">Human versus bots </h3>
+                                <h1 class="dfx-title dfx-title-cl">The easiest way to make money on sports</h1>
+                                <p class="dfx-text">Reasons for valuebets appearance
+                                    Value bets occur daily and frequently. Many factors may affect their occurrence, but
+                                    there are only four main ones:
+                                    <br>
+                                    <li>Errors in analysis of the bookmaker event outcome. This factor is especially
+                                        important in the lower leagues with minimum data accessible in open sources.
+                                    </li> <br>
+                                    <li>“Betting dropping odds” on the side of the bettors. Bettors often bet heavily on
+                                        top
+                                        clubs, overloading the already dipping line to the maximum. If the odds become
+                                        abnormally low, then it makes sense to catch the value in the opposite outcome.
+                                    </li><br>
+                                    <li>The bookie is slow to correct the odds. Sometimes the bookie may not keep pace
+                                        with
+                                        the odds swings or may deliberately neglect to reduce them. At such moments, the
+                                        bettor may be able to find a valuebet by choosing the bookie with more
+                                        attractive
+                                        odds.</li><br>
+                                    <li>Bookmaker’s error. Sportsbooks do not always have time to correctly set a
+                                        betting
+                                        line, especially with a huge influx of matches. However, such valuebets often
+                                        turn
+                                        into a cashback and attract too much attention from the bookies.</li>
+                                </p>
+                                <!-- <div class="dfx-btn-grp">
+                                    <a href="/en/guarantee" class="dfx-btn dfx-btn-prm">Our guarantee</a> <a
+                                        href="/en/feedback" class="dfx-btn dfx-btn-out">Read reviews</a>
+                                </div> -->
+                            </div>
+                            <div class="col-12 d-block d-sm-block d-md-none d-lg-none">
+                                <div class="img-container">
+                                    <img data-src="/assets//img/site/index/original/tetrabet_converter.png"
+                                        src="/assets//img/site/index/tetrabet_converter.png"
+                                        class="dfx-img-rsp lazyload blur-up">
+                                    <span class="type type-1 win animated">win</span> <span
+                                        class="type type-2 win animated">win</span> <span
+                                        class="type type-3 lose animated">lose</span> <span
+                                        class="type type-4 win animated">win</span>
+
+                                    <span class="money">+300$</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="steps">
+                <div class="container">
+                    <div class="items-wrapper">
+                        <div class="row">
+                            <div class="col-6 col-md-3">
+                                <div class="item">
+                                    <div class="num">
+                                        <span>1</span>
+                                    </div>
+                                    <h6 class="title">Data collection</h6>
+                                    <p class="desc">Parsing lines of bookmakers and other sources</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="item">
+                                    <div class="num">
+                                        <span>2</span>
+                                    </div>
+                                    <h6 class="title">Analysis</h6>
+                                    <p class="desc">Evaluation and processing of the obtained data</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="item">
+                                    <div class="num">
+                                        <span>3</span>
+                                    </div>
+                                    <h6 class="title">Checking criteria</h6>
+                                    <p class="desc">Correlation of probabilities with available outcomes</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="item">
+                                    <div class="num">
+                                        <span>4</span>
+                                    </div>
+                                    <h6 class="title">Best outcome</h6>
+                                    <p class="desc">Determination of the optimal outcome and odds</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+            <section id="footer">
+
+                <div class="copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright-wrapper">
+                                    <p class="rights"><i class="fa fa-copyright"></i> BetFund 2022. All rights
+                                        reserved</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="./assets/yii.js"></script>
+    <script src="./assets//js/base/preloader.js?"></script>
+    <script src="/assets//js/base/aside.js"></script>
+    <script src="./assets//js/base/expand-menu.js"></script>
+    <script src="./assets//js/base/fixed-header.js"></script>
+    <script src="./assets//js/base/modal-init.js"></script>
+    <script src="./assets//js/base/show-sale-modal.js"></script>
+    <script src="./assets//js/site/index/common.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+</body>
+
+</html>

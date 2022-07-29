@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: local('Roboto Condensed'), local('RobotoCondensed-Regular'),
+    url('../fonts/RobotoCondensed/subset-RobotoCondensed-Regular.woff2') format('woff2'),
+    url('../fonts/RobotoCondensed/subset-RobotoCondensed-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+    url('../fonts/RobotoCondensed/subset-RobotoCondensed-Light.woff2') format('woff2'),
+    url('../fonts/RobotoCondensed/subset-RobotoCondensed-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
